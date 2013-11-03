@@ -6,7 +6,7 @@ You can create new Dockerfile based on that image (FROM tf2) and customize it wi
 
 ```shell
 # Build image and tag it as tf2
-docker build github.com/Gonzih/docker-tf2-server -t tf2
+docker build -t tf2 github.com/Gonzih/docker-tf2-server
 
 # Run image with default options (CMD in Dockerfile)
 docker run -d -p 27015:27015/udp tf2
