@@ -1,8 +1,8 @@
 ## Team Fortress 2 + Docker
 
 ### Details:
-By default image is build with enabled autoupdate feature (take a look at tf.sh file).
-You can create new Dockerfile based on that image and customize it with plugins, configs, CMD and ENTRYPOINT instructions.
+By default image is build with enabled autoupdate feature (take a look at `tf.sh` file).
+You can create new Dockerfile based on that image (FROM tf2) and customize it with plugins, configs, CMD and ENTRYPOINT instructions.
 
 ```shell
 # Build image and tag it as tf2
