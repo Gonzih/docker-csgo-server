@@ -19,4 +19,4 @@ RUN $SERVER/update.sh
 EXPOSE 27015/udp
 
 ENTRYPOINT ["/home/tf2/hlserver/tf.sh"]
-CMD ["+sv_pure", "1", "+map", "pl_badwater.bsp", "+maxplayers", "24"]
+CMD ["+sv_pure", "1", "+mapcycle", "mapcycle_quickplay_payload.txt", "+maxplayers", "24"]
