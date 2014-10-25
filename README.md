@@ -13,4 +13,7 @@ docker run -d -p 27015:27015/udp tf2
 
 # Run image with custom options
 docker run -d -p 27015:27015/udp tf2 +sv_pure 2 +map ctf_2fort.bsp +maxplayers 32
+
+# Run image with custom config
+docker run -d -p 27015:27015/udp -v ~/server.cfg:/home/tf2/hlserver/tf2/tf/cfg/server.cfg:ro tf2
 ```
