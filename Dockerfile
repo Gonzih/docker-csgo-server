@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:12.04
 MAINTAINER Max Gonzih <gonzih at gmail dot com>
 
 RUN apt-get -y update
