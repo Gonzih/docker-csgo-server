@@ -8,10 +8,12 @@ run apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 env USER tf2
 
-run adduser --gecos "" $USER
+run useradd $USER
+env HOME /home/$USER
+run mkdir $HOME
+run chown $USER:$USER $HOME
 
 user $USER
-env HOME /home/$USERc
 env SERVER $HOME/hlserver
 run mkdir $SERVER
 run wget -O - http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz
