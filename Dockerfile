@@ -8,7 +8,6 @@ run apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 env USER tf2
 
-
 run adduser --gecos "" $USER
 
 user $USER
