@@ -24,5 +24,6 @@ run $SERVER/update.sh
 
 expose 27015/udp
 
-entrypoint ["/home/$USER/hlserver/tf.sh"]
+workdir /home/$USER/hlserver
+entrypoint ["./tf.sh"]
 cmd ["+sv_pure", "1", "+mapcycle", "mapcycle_quickplay_payload.txt", "+map", "pl_badwater", "+maxplayers", "24"]
