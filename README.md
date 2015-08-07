@@ -26,4 +26,4 @@ So building your own image is much better option in that sense.
 Also this image is quiet heavy (~ 6.2 Gb) and with current hub speeds I don't have patience to upload it.
 It might be possible that downloading tf2 server from steam is faster then downloading image from docker hub.
 
-Again I strive for my own images (FROM scratch), so no plans on uploading this to hub right now.
+Again I strive to use my own images (FROM scratch), so no plans on uploading this to hub right now.
