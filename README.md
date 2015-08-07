@@ -23,7 +23,7 @@ I personaly don't like idea of downloading binary executable blob that runs in d
 Docker is far from being secure (at least at the current moment).
 So building your own image is much better option in that sense.
 
-Also this image is quiet heavy (~4Gb) and with current hub speeds I don't have patience to upload it.
+Also this image is quiet heavy (~ 6.2 Gb) and with current hub speeds I don't have patience to upload it.
 It might be possible that downloading tf2 server from steam is faster then downloading image from docker hub.
 
 Again I strive for my own images (FROM scratch), so no plans on uploading this to hub right now.
