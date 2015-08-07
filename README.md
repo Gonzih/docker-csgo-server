@@ -17,3 +17,13 @@ docker run -d -p 27015:27015/udp tf2 +sv_pure 2 +map ctf_2fort.bsp +maxplayers 3
 # Run image with custom config
 docker run -d -p 27015:27015/udp -v ~/server.cfg:/home/tf2/hlserver/tf2/tf/cfg/server.cfg:ro tf2
 ```
+
+### Why this image is not on the public docker hub?
+I personaly don't like idea of downloading binary executable blob that runs in daemon with root permissions on my server.
+Docker is far from being secure (at least at the current moment).
+So building your own image is much better option in that sense.
+
+Also this image is quiet heavy (~4Gb) and with current hub speeds I don't have patience to upload it.
+It might be possible that downloading tf2 server from steam is faster then downloading image from docker hub.
+
+Again I strive for my own images (FROM scratch), so no plans on uploading this to hub right now.
