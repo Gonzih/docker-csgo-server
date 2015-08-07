@@ -19,7 +19,7 @@ docker run -d -p 27015:27015/udp -v ~/server.cfg:/home/tf2/hlserver/tf2/tf/cfg/s
 ```
 
 ### Why this image is not on the public docker hub?
-I personaly don't like idea of downloading binary executable blob that runs in daemon with root permissions on my server.
+I personaly don't like idea of downloading binary executable blob that runs in a daemon with root permissions on my server.
 Docker is far from being secure (at least at the current moment).
 So building your own image is much better option in that sense.
 
