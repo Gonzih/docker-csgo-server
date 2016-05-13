@@ -1,29 +1,29 @@
-from ubuntu:12.04
-maintainer Max Gonzih <gonzih at gmail dot com>
+FROM ubuntu:12.04
+MAINTAINER Max Gonzih <gonzih at gmail dot com>
 
-run apt-get -y update
-run apt-get -y upgrade
-run apt-get -y install lib32gcc1 lib32z1 lib32ncurses5 lib32bz2-1.0 lib32asound2 wget
-run apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install lib32gcc1 lib32z1 lib32ncurses5 lib32bz2-1.0 lib32asound2 wget
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-env USER tf2
+ENV USER tf2
 
-run useradd $USER
-env HOME /home/$USER
-run mkdir $HOME
-run chown $USER:$USER $HOME
+RUN useradd $USER
+ENV HOME /home/$USER
+RUN mkdir $HOME
+RUN chown $USER:$USER $HOME
 
-user $USER
-env SERVER $HOME/hlserver
-run mkdir $SERVER
-run wget -O - http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz
-add ./tf2_ds.txt $SERVER/tf2_ds.txt
-add ./update.sh $SERVER/update.sh
-add ./tf.sh $SERVER/tf.sh
-run $SERVER/update.sh
+USER $USER
+ENV SERVER $HOME/hlserver
+RUN mkdir $SERVER
+RUN wget -O - http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz
+ADD ./tf2_ds.txt $SERVER/tf2_ds.txt
+ADD ./update.sh $SERVER/update.sh
+ADD ./tf.sh $SERVER/tf.sh
+RUN $SERVER/update.sh
 
-expose 27015/udp
+EXPOSE 27015/udp
 
-workdir /home/$USER/hlserver
-entrypoint ["./tf.sh"]
-cmd ["+sv_pure", "1", "+mapcycle", "mapcycle_quickplay_payload.txt", "+map", "pl_badwater", "+maxplayers", "24"]
+WORKDIR /home/$USER/hlserver
+ENTRYPOINT ["./tf.sh"]
+CMD ["+sv_pure", "1", "+mapcycle", "mapcycle_quickplay_payload.txt", "+map", "pl_badwater", "+maxplayers", "24"]
