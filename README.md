@@ -1,15 +1,13 @@
 ## Counter Strike Global Offensive + Docker
 
+No hub image (15 GB resulting image is too big), sorry.
+
 ### Details:
 By default image is build with enabled autoupdate feature (take a look at `csgo.sh` file).
 You can create new Dockerfile based on that image (FROM csgo or FROM gonzih/csgo-server) and customize it with plugins, configs, CMD and ENTRYPOINT instructions.
 
 ```shell
-# Run using image hosted on the docker hub
-
-docker run -d -p 27015:27015/udp gonzih/csgo-server
-
-# Or build image and tag it as csgo
+# Build image and tag it as csgo
 docker build -t csgo github.com/Gonzih/docker-csgo-server
 
 # Run image with default options (CMD in Dockerfile)
