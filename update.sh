@@ -1,3 +1,3 @@
 #!/bin/sh
 cd $HOME/hlserver
-./steamcmd.sh +runscript tf2_ds.txt
+./steamcmd.sh +runscript csgo_ds.txt
