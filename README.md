@@ -4,7 +4,7 @@ No hub image (15 GB resulting image is too big), sorry.
 
 ### Details:
 By default image is build with enabled autoupdate feature (take a look at `csgo.sh` file).
-You can create new Dockerfile based on that image (FROM csgo or FROM gonzih/csgo-server) and customize it with plugins, configs, CMD and ENTRYPOINT instructions.
+You can create new Dockerfile based on that image (FROM csgo) and customize it with plugins, configs, CMD and ENTRYPOINT instructions.
 
 ```shell
 # Build image and tag it as csgo
