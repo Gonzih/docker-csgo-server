@@ -1,5 +1,9 @@
 ## Counter Strike Global Offensive + Docker
 
+CS:GO server in docker with 128 tick enabled by default.
+
+### Docker hub image
+
 No hub image (15 GB resulting image is too big), sorry.
 
 ### Details:
