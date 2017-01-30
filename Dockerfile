@@ -21,6 +21,7 @@ ADD ./csgo_ds.txt $SERVER/csgo_ds.txt
 ADD ./update.sh $SERVER/update.sh
 RUN $SERVER/update.sh
 ADD ./autoexec.cfg $SERVER/cfg/autoexec.cfg
+ADD ./server.cfg $SERVER/cfg/server.cfg
 ADD ./csgo.sh $SERVER/csgo.sh
 
 EXPOSE 27015/udp
