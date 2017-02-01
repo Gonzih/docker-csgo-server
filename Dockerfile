@@ -13,18 +13,20 @@ ENV HOME /home/$USER
 RUN mkdir $HOME
 RUN chown $USER:$USER $HOME
 
-USER $USER
 ENV SERVER $HOME/hlserver
 RUN mkdir $SERVER
-RUN curl http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz
+
 ADD ./csgo_ds.txt $SERVER/csgo_ds.txt
 ADD ./update.sh $SERVER/update.sh
-RUN $SERVER/update.sh
 ADD ./autoexec.cfg $SERVER/cfg/autoexec.cfg
 ADD ./server.cfg $SERVER/cfg/server.cfg
 ADD ./csgo.sh $SERVER/csgo.sh
 
-RUN chown -R $USER:$USER $SERVER/cfg $SERVER/update.sh $SERVER/csgo.sh $SERVER/csgo_ds.txt
+RUN chown -R $USER:$USER $SERVER
+
+USER $USER
+RUN curl http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz
+RUN $SERVER/update.sh
 
 EXPOSE 27015/udp
 
