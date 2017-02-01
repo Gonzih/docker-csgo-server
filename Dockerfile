@@ -24,7 +24,7 @@ ADD ./autoexec.cfg $SERVER/cfg/autoexec.cfg
 ADD ./server.cfg $SERVER/cfg/server.cfg
 ADD ./csgo.sh $SERVER/csgo.sh
 
-RUN chown -R $USER $SERVER/cfg $SERVER/update.sh $SERVER/csgo.sh $SERVER/csgo_ds.txt
+RUN chown -R $USER:$USER $SERVER/cfg $SERVER/update.sh $SERVER/csgo.sh $SERVER/csgo_ds.txt
 
 EXPOSE 27015/udp
 
