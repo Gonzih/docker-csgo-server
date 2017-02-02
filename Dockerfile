@@ -3,7 +3,7 @@ MAINTAINER Max Gonzih <gonzih at gmail dot com>
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install lib32gcc1 curl \
+    && apt-get -y install lib32gcc1 curl net-tools \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV USER csgo
@@ -18,8 +18,8 @@ RUN mkdir $SERVER
 
 ADD ./csgo_ds.txt $SERVER/csgo_ds.txt
 ADD ./update.sh $SERVER/update.sh
-ADD ./autoexec.cfg $SERVER/cfg/autoexec.cfg
-ADD ./server.cfg $SERVER/cfg/server.cfg
+ADD ./autoexec.cfg $SERVER/csgo/csgo/cfg/autoexec.cfg
+ADD ./server.cfg $SERVER/csgo/csgo/cfg/server.cfg
 ADD ./csgo.sh $SERVER/csgo.sh
 
 RUN chown -R $USER:$USER $SERVER
