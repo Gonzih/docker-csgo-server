@@ -31,4 +31,7 @@ docker run -d -p 27015:27015 -p 27015:27015/udp csgo -console -usercon +game_typ
 
 # Run image with as Deathmatch server
 docker run -d -p 27015:27015 -p 27015:27015/udp csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic +map de_dust
+
+# To run lan server just add `+sv_lan 1` at end of command
+docker run -d -p 27015:27015 -p 27015:27015/udp csgo -console -usercon +game_type 0 +game_mode 1 +mapgroup mg_active +map de_cache +sv_lan 1
 ```
