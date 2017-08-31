@@ -1,19 +1,18 @@
 FROM ubuntu:16.04
 MAINTAINER Max Gonzih <gonzih at gmail dot com>
 
-RUN apt-get -y update \
-    && apt-get -y upgrade \
-    && apt-get -y install lib32gcc1 curl net-tools \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 ENV USER csgo
 ENV HOME /home/$USER
 ENV SERVER $HOME/hlserver
 
-RUN useradd $USER \
- && mkdir $HOME \
- && chown $USER:$USER $HOME \
- && mkdir $SERVER
+RUN apt-get -y update \
+    && apt-get -y upgrade \
+    && apt-get -y install lib32gcc1 curl net-tools \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && useradd $USER \
+    && mkdir $HOME \
+    && chown $USER:$USER $HOME \
+    && mkdir $SERVER
 
 ADD ./csgo_ds.txt $SERVER/csgo_ds.txt
 ADD ./update.sh $SERVER/update.sh
