@@ -4,7 +4,9 @@ CS:GO server in docker with 128 tick enabled by default.
 
 ### Docker hub image
 
-No hub image (15 GB resulting image is too big), sorry.
+```shell
+docker pull gonzih/csgo-server
+```
 
 ### Details:
 By default image is build with enabled autoupdate feature (take a look at `csgo.sh` file).
