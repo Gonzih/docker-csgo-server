@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Max Gonzih <gonzih at gmail dot com>
 
-RUN echo version 0.0.1
-
 ENV USER csgo
 ENV HOME /home/$USER
 ENV SERVER $HOME/hlserver
