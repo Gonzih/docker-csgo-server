@@ -7,7 +7,7 @@ ENV SERVER $HOME/hlserver
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install lib32gcc1 curl net-tools libstdc++6 \
+    && apt-get -y install lib32gcc1 curl net-tools lib32stdc++6 \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && useradd $USER \
     && mkdir $HOME \
