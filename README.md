@@ -1,5 +1,7 @@
 ## Counter Strike Global Offensive + Docker
 
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/docker-csgo-server/blob/master/LICENSE.md
+
 CS:GO server in docker with 128 tick enabled by default.
 
 ### Docker hub image
