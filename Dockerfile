@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
-MAINTAINER Max Gonzih <gonzih at gmail dot com>
+LABEL Name="Max Gonzih" 
+LABEL Mail="gonzih@gmail.com"
 
 ENV USER csgo
 ENV HOME /home/$USER
@@ -7,7 +8,7 @@ ENV SERVER $HOME/hlserver
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install lib32gcc1 curl net-tools lib32stdc++6 locales \
+    && apt-get -y install lib32gcc1 curl net-tools locales \
     && locale-gen en_US.UTF-8 \
     && update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && dpkg-reconfigure --frontend=noninteractive locales \
@@ -30,11 +31,11 @@ ADD ./csgo.sh $SERVER/csgo.sh
 RUN chown -R $USER:$USER $SERVER
 
 USER $USER
-RUN curl http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz \
+RUN curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -C $SERVER -xvz \
     && $SERVER/update.sh
 
 EXPOSE 27015/udp
 
-WORKDIR /home/$USER/hlserver
+WORKDIR ${SERVER}
 ENTRYPOINT ["./csgo.sh"]
 CMD ["-console" "-usercon" "+game_type" "0" "+game_mode" "1" "+mapgroup" "mg_active" "+map" "de_cache"]
